@@ -42,7 +42,13 @@ var moment = require('moment');
 
 const editorConfiguration = {
 
-  toolbar: [ 'bold', 'italic' ,"imageUpload"]
+  toolbar: [  "heading",
+  "|",'bold', 'italic' ,   "bulletedList",
+  "numberedList",     "blockQuote", "|",
+  "insertTable",
+
+  "imageUpload" ,  "|",  "undo",
+  "redo",]
 };
 
 

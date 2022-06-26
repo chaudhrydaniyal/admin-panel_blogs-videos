@@ -30,11 +30,20 @@ import "./assets/css/demo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import AdminLayout from "layouts/Admin.js";
+import Login from "views/login/login";
+
+const auth =localStorage.getItem("auth")
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+    <Route path="/admin" render={(props) => auth ==="true" ?<AdminLayout {...props} />:  <Redirect to={{
+              pathname: '/',
+              }}
+            />} />
+    <Route path="/" render={(props) => <Login/>} />
+
+     
       {/* <Redirect from="/" to="/admin/dashboard" /> */}
     </Switch>
   </BrowserRouter>,

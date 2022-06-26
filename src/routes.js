@@ -30,6 +30,7 @@ import Category from "views/category/Category";
 import Playlists from "views/playlists/playlists";
 import PlaylistsDetail from "views/playlists/playlistDetails";
 import PlaylistDetail from "views/playlists/playlistDetails";
+import Login from "views/login/login";
 
 const dashboardRoutes = [
   // {
@@ -57,8 +58,8 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/videos",
-    name: "Videos",
+    path: "/playlists",
+    name: "Playlists",
     icon: "bi bi-youtube",
     component: Playlists,
     layout: "/admin",
@@ -70,6 +71,15 @@ const dashboardRoutes = [
     // icon: "bi bi-youtube",
     component: CreateBlog,
     layout: "/admin",
+    redirect:true
+  },
+
+  {
+    path: "/",
+    // name: "createBlog",
+    // icon: "bi bi-youtube",
+    component: Login,
+    layout: "/",
     redirect:true
   },
   {

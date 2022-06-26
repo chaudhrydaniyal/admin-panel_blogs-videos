@@ -18,6 +18,7 @@
 import React, { Component } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
+import { useHistory } from "react-router";
 
 import routes from "routes.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -59,6 +60,7 @@ function Header() {
   };
 
 
+  const history = useHistory();
 
 
   const Title = () => {
@@ -246,7 +248,14 @@ function Header() {
               <Nav.Link
                 className="m-0"
                 href="#pablo"
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {e.preventDefault()
+                localStorage.setItem("auth", false)
+                history.push({
+                  pathname:  "/",
+                 
+               });
+              
+              }}
               >
                 <span className="no-icon">Log out</span>
               </Nav.Link>

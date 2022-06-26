@@ -30,6 +30,8 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { PlaylistTable } from "./Tables";
 
 import { useLocation } from "react-router-dom";
+import { ChildPlaylistTable } from "./childPlaylists";
+import { PlaylistVideos } from "./playlistVideos";
 
 var moment = require("moment");
 
@@ -66,8 +68,9 @@ function  PlaylistDetail () {
         className="table-wrapper table-responsive shadow-sm p-3 "
       >
         <Card.Body className="pt-0">
-        
-        Playlist Name: {playlist_detail.name}
+        <div className="d-flex">
+        <h4 className="mt-0 mb-0">Playlist Name: </h4> <span className="ml-2 mt-1">{playlist_detail.name}</span>
+        </div>
         <br></br> 
         Parent Id: {playlist_detail.parent}
 
@@ -76,6 +79,12 @@ function  PlaylistDetail () {
         Level: {playlist_detail.level != undefined ? playlist_detail.level : "Not Defined"}
 
 
+
+        <br />
+
+        <ChildPlaylistTable id={playlist_detail._id} level={playlist_detail.level}></ChildPlaylistTable>
+
+<PlaylistVideos id={playlist_detail._id}></PlaylistVideos>
     
         </Card.Body>
       </Card>

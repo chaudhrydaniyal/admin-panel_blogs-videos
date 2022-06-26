@@ -52,29 +52,15 @@ function EditBlog() {
 
   console.log("params", blog);
 
-  const custom_config = {
-    // extraPlugins: [ ImageUploadUI  ],
-    toolbar: {
-      items: [
-        "heading",
-        "|",
-        "bold",
-        "italic",
-        "link",
-        "bulletedList",
-        "numberedList",
-        "|",
-        "blockQuote",
-        "insertTable",
-        "|",
-        "imageUpload",
-        "undo",
-        "redo",
-      ],
-    },
-    table: {
-      contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
-    },
+  const editorConfiguration = {
+
+    toolbar: [  "heading",
+    "|",'bold', 'italic' ,   "bulletedList",
+    "numberedList",     "blockQuote", "|",
+    "insertTable",
+  
+    "imageUpload" ,  "|",  "undo",
+    "redo",]
   };
 
   return (
@@ -185,7 +171,7 @@ function EditBlog() {
                   onFocus={(event, editor) => {
                     console.log("Focus.", editor);
                   }}
-                  config={custom_config}
+                  config={editorConfiguration}
                 />
               </div>
             </div>

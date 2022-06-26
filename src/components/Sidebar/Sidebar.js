@@ -76,7 +76,6 @@ function Sidebar({ color, image, routes }) {
         <div className="d-flex justify-content-center" style={{}}>
           <Nav className="mb-5 " style={{ position: "absolute", bottom: "0" }}>
             <NavLink to="" className="text-white">
-              Log out
             </NavLink>
           </Nav>
         </div>

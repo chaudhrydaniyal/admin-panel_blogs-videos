@@ -46,7 +46,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 var moment = require("moment");
 
-export const PlaylistTable = () => {
+export const ChildPlaylistTable = ({id ,level}) => {
   const [playlists, setPlaylists] = useState([]);
   const [newPlaylist, setNewPlaylist] = useState("")
 
@@ -60,11 +60,11 @@ export const PlaylistTable = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/playlists/rootPlaylists`).then((res) => {
-      console.log("categories", res);
+    axios.get(`http://localhost:3001/playlists/childPlaylists/${id}`).then((res) => {
+      console.log("childPlaylists", res);
       setPlaylists(res.data);
     });
-  }, []);
+  }, [id]);
 
   function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -338,7 +338,7 @@ export const PlaylistTable = () => {
                       .delete(`http://localhost:3001/playlists/${_id}`)
                       .then(() =>
                         axios
-                          .get(`http://localhost:3001/playlists/rootPlaylists`)
+                          .get(`http://localhost:3001/playlists/childPlaylists/${id}`)
                           .then((res) => {
                             console.log("blogs", res);
                             setPlaylists(res.data);
@@ -362,7 +362,7 @@ export const PlaylistTable = () => {
       <Paper sx={{ width: "100%", mb: 2 }} className="p-4">
         <TableContainer>
           <div className="d-flex ml-3 mt-3 mb-1">
-            <h3>Playlists</h3>
+            <h3>Child Playlists</h3>
             <Button
               onClick={handleOpen}
               style={{
@@ -421,16 +421,16 @@ export const PlaylistTable = () => {
                           url: "http://localhost:3001/playlists",
                           data: {
                             name: newPlaylist,
-                            level: 0,
+                            level: (level+1),
                             createdAt: moment().format("LLL"),
                             noOfVideos: 0,
-                            parent: "null",
+                            parent: `${id}`,
                           },
                           headers: { "Content-Type": "application/json" },
                         })
 
                         axios
-                          .get(`http://localhost:3001/playlists/rootPlaylists`)
+                          .get(`http://localhost:3001/playlists/childPlaylists/${id}`)
                           .then((res) => {
                             console.log("blogs", res);
                             setPlaylists(res.data);
