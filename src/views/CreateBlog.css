@@ -1,0 +1,100 @@
+/* input[type="text"],
+select.form-control, #blogTitle  {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus,
+select.form-control:focus, #blogTitle:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+} */
+
+
+
+.table-wrapper{
+
+  border-radius: 10px;
+}
+
+
+.ck-editor__editable {
+  min-height: 470px;
+}
+
+
+option[value=""][disabled] {
+  display: none;
+}
+
+
+input::placeholder {
+  color: black !important;
+  font-weight: 500;
+  font-variant: inherit;
+  opacity: 0.7 !important;
+
+
+}
+
+.force-opaque::placeholder {
+  /* opacity: 1 !important; */
+  opacity: 0.7 !important;
+
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: black !important;
+  opacity: 0.7 !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: black;
+  opacity: 0.7 !important;
+
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: black !important;
+  opacity: 0.7 !important;
+
+} 
+:-moz-placeholder { /* Firefox 18- */
+  color: black;
+  opacity: 0.7 !important;
+
+}
+
+::-moz-placeholder {
+  opacity: 0.7 !important;
+
+}
+
+
+/* WebKit, Edge */
+::-webkit-input-placeholder {
+  color: black;
+  opacity: 0.7 !important;
+
+}
+/* Firefox 4-18 */
+:-moz-placeholder {
+  color: black;
+  opacity: 0.7 !important;
+}
+/* Firefox 19+ */
+::-moz-placeholder {
+  color: black;
+  opacity: 0.7 !important;
+}
+/* IE 10-11 */
+:-ms-input-placeholder {
+  color: black;
+}
+/* Edge */
+::-ms-input-placeholder {
+  color: black;
+}

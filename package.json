@@ -1,0 +1,66 @@
+{
+  "name": "light-bootstrap-dashboard-react",
+  "version": "2.0.0",
+  "dependencies": {
+    "@ckeditor/ckeditor5-react": "^5.0.2",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@fortawesome/fontawesome-free": "5.15.2",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.5",
+    "@themesberg/react-bootstrap": "^1.4.1",
+    "axios": "^0.27.2",
+    "bootstrap": "4.6.0",
+    "bootstrap-icons": "^1.8.3",
+    "chartist": "0.10.1",
+    "ckeditor5-custom-build": "file:./ckeditor5",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "moment": "^2.29.3",
+    "react": "17.0.1",
+    "react-bootstrap": "1.4.3",
+    "react-chartist": "0.14.3",
+    "react-dom": "17.0.1",
+    "react-notification-alert": "0.0.13",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.1"
+  },
+  "optionalDependencies": {
+    "jquery": "3.5.1",
+    "reactstrap": "8.9.0",
+    "typescript": "4.1.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && gulp licenses",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "compile:scss": "node-sass src/assets/scss/light-bootstrap-dashboard-react.scss src/assets/css/light-bootstrap-dashboard-react.css",
+    "minify:scss": "node-sass src/assets/scss/light-bootstrap-dashboard-react.scss src/assets/css/light-bootstrap-dashboard-react.min.css --output-style compressed",
+    "map:scss": "node-sass src/assets/scss/light-bootstrap-dashboard-react.scss src/assets/css/light-bootstrap-dashboard-react.css --source-map true",
+    "build:scss": "npm run compile:scss && npm run minify:scss && npm run map:scss"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "sass": "^1.53.0"
+  }
+}
